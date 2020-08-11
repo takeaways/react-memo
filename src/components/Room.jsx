@@ -73,6 +73,7 @@ const Time = styled.span`
   &::after {
     content: "${(props) => props.time}";
   }
+  display:${(props) => props.show === false && 'none'};
 `;
 
 const Divider = styled.div`
@@ -127,10 +128,6 @@ export default function Room({
     }
   }, [room]);
 
-  useLayoutEffect(() => {
-    console.log(1);
-  });
-
   return (
     <Container ref={scrollRef}>
       <ImageSelector
@@ -153,7 +150,10 @@ export default function Room({
                         </Chat>
                       ) : (
                         <Chat key={talk.time + index} location={'flex-end'}>
-                          <Time time={talk.time.slice(11, 16)} />
+                          <Time
+                            time={talk.time.slice(11, 16)}
+                            show={talk.show}
+                          />
                           {talk.type === 'img' ? (
                             <ImageChat img={talk.content} />
                           ) : (

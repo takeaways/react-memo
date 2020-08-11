@@ -20,7 +20,7 @@ function leftOnlyLastTime(room) {
       if (
         chat.time.slice(11, 16) === chatList.chats[index + 1].time.slice(11, 16)
       ) {
-        chat.time = '';
+        chat.show = false;
         return chat;
       }
       return chat;
@@ -55,7 +55,7 @@ export default function RoomContainer() {
     dispatch(selectImg(id));
   }
 
-  // leftOnlyLastTime(room);
+  leftOnlyLastTime(room);
 
   return (
     <Room
