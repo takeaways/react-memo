@@ -32,7 +32,7 @@ Critical Rendering Path를 참고 해 보아요 :)
     <title>react development environment</title>
 </head>
 <body>
-    <h1>야! 나두</h1>
+    <h1>야!! 나두</h1>
     <div id="root"></div>
 </body>
 </html>
